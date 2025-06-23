@@ -1,13 +1,20 @@
 # 🐍 Pyction
 *(pronounced: **"pik-shun"**)*
 
-Run Python scripts with [`uv`](https://github.com/astral-sh/uv) inside a slim, fast Docker container based on Python 3.13.
+Run Python scripts with [`uv`](https://github.com/astral-sh/uv) inside a slim, fast Docker container based on Python 3.13. Uses the @CivicActions' [Pyction image](https://github.com/CivicActions/pyction).
 
 [![build](https://github.com/CivicActions/pyction/actions/workflows/build.yml/badge.svg)](https://github.com/CivicActions/pyction/actions/workflows/build.yml) [![updated](https://img.shields.io/github/last-commit/CivicActions/pyction?label=updated&logo=github)](https://github.com/CivicActions/pyction/commits/main)
 
 ## 🔧 Usage
+*`uv sync` is handled by the action, so you just need your run or other commands*
+
+**🔐 Required Step: Checkout Your Code**
+
+Before using Pyction, you must check out your repository so it's available inside the container:
 
 ```yaml
+- uses: actions/checkout@v4
+
 - name: Run Python Script in pyction
   uses: civicactions/pyction@v1
   with:
